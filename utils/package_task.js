@@ -2,7 +2,7 @@
 
 /*
  * grunt-aws-lambda
- * https://github.com/Tim-B/grunt-aws-lambda
+ * https://github.com/dotupNET/grunt-aws-lambda
  *
  * Copyright (c) 2014 Tim-B
  * Licensed under the MIT license.
@@ -66,7 +66,7 @@ packageTask.getHandler = function (grunt) {
                 /*
                  * Monkey patch to ensure permissions are always 777
                  * Prevents issues on Windows for directories that don't have execute permissions
-                 * See https://github.com/Tim-B/grunt-aws-lambda/issues/6
+                 * See https://github.com/dotupNET/grunt-aws-lambda/issues/6
                  */
                 var old_normalizeEntryData = zipArchive._normalizeEntryData;
                 zipArchive._normalizeEntryData = function (data, stats) {

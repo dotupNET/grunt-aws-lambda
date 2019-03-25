@@ -25,60 +25,64 @@ var AdmZip = require('adm-zip');
  */
 
 function getNormalizedFile(filepath) {
-    return grunt.util.normalizelf(grunt.file.read(filepath));
+  return grunt.util.normalizelf(grunt.file.read(filepath));
 }
 
 exports.lambda_package = {
-    setUp: function (done) {
-        // setup here if necessary
-        done();
-    },
-    default_options: function (test) {
-        test.expect(5);
-        glob("my-lambda-function_0-0-1_*.zip", {cwd: 'tmp/dist'}, function (er, files) {
-            test.equals(1, files.length);
+  setUp: function (done) {
+    // setup here if necessary
+    done();
+  },
+  default_options: function (test) {
+    test.expect(5);
+    glob("my-lambda-function_0-0-1_*.zip", { cwd: 'tmp/dist' }, function (er, files) {
 
-            var zip = new AdmZip('tmp/dist/' + files[0]);
-            var zipEntries = zip.getEntries();
+      const t = typeof files;
+      test.equals('array', t);
 
-            test.equals(3, zipEntries.length);
+      test.equals(1, files.length);
 
-            var required = [
-                'index.js',
-                'package.json',
-                '.test'
-            ];
+      var zip = new AdmZip('tmp/dist/' + files[0]);
+      var zipEntries = zip.getEntries();
 
-            zipEntries.forEach(function (item) {
-                if (required.indexOf(item.entryName) !== -1) {
-                    test.ok(true, "Found " + item.entryName);
-                }
-            });
+      test.equals(3, zipEntries.length);
 
-            test.done();
-        });
-    },
-    custom_options: function (test) {
-        test.expect(6);
-        var zip = new AdmZip("tmp/dist/another-lambda-function_0-0-1_latest.zip");
-        var zipEntries = zip.getEntries();
+      var required = [
+        'index.js',
+        'package.json',
+        '.test'
+      ];
 
-        var required = [
-            'custom.json',
-            'index.js',
-            'package.json',
-            'node_modules/',
-            'node_modules/jquery/',
-            'node_modules/jquery/package.json'
-        ];
+      zipEntries.forEach(function (item) {
+        if (required.indexOf(item.entryName) !== -1) {
+          test.ok(true, "Found " + item.entryName);
+        }
+      });
 
-        zipEntries.forEach(function (item) {
-            if (required.indexOf(item.entryName) !== -1) {
-                test.ok(true, "Found " + item.entryName);
-            }
-        });
+      test.done();
+    });
+  },
+  custom_options: function (test) {
+    test.expect(6);
+    var zip = new AdmZip("tmp/dist/another-lambda-function_0-0-1_latest.zip");
+    var zipEntries = zip.getEntries();
 
-        test.done();
-    }
+    var required = [
+      'custom.json',
+      'index.js',
+      'package.json',
+      'node_modules/',
+      'node_modules/jquery/',
+      'node_modules/jquery/package.json'
+    ];
+
+    zipEntries.forEach(function (item) {
+      if (required.indexOf(item.entryName) !== -1) {
+        test.ok(true, "Found " + item.entryName);
+      }
+    });
+
+    test.done();
+  }
 
 };

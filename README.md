@@ -595,16 +595,16 @@ Adding more warnings for various failure cases
 
 ### 0.4.0
 
-* Added support for succeed and fail functions - [pull request by jonyo](https://github.com/Tim-B/grunt-aws-lambda/pull/11)
-* Added NPM to package.json - [pull request by jonyo](https://github.com/Tim-B/grunt-aws-lambda/pull/13), should address [issue 2](https://github.com/Tim-B/grunt-aws-lambda/issues/2#issuecomment-104805707)
-* Added timeout and memory options - [timeout pull request by aidancasey](https://github.com/Tim-B/grunt-aws-lambda/pull/3)
+* Added support for succeed and fail functions - [pull request by jonyo](https://github.com/dotupNET/grunt-aws-lambda/pull/11)
+* Added NPM to package.json - [pull request by jonyo](https://github.com/dotupNET/grunt-aws-lambda/pull/13), should address [issue 2](https://github.com/dotupNET/grunt-aws-lambda/issues/2#issuecomment-104805707)
+* Added timeout and memory options - [timeout pull request by aidancasey](https://github.com/dotupNET/grunt-aws-lambda/pull/3)
 * Bumped aws-sdk version
-* Bumped adm-zip version, will hopefully address [issue 4](https://github.com/Tim-B/grunt-aws-lambda/issues/4)
+* Bumped adm-zip version, will hopefully address [issue 4](https://github.com/dotupNET/grunt-aws-lambda/issues/4)
 
 ### 0.5.0
-* Fixed issue where dotfiles weren't packaged - [see issue 17](https://github.com/Tim-B/grunt-aws-lambda/issues/17)
-* Fixed issue where task could be done before zip writing is finished - [pull request by qen](https://github.com/Tim-B/grunt-aws-lambda/pull/16)
-* Monkey patched node-archiver to force permissions to be 777 for all files in package - [see issue 6](https://github.com/Tim-B/grunt-aws-lambda/issues/6)
+* Fixed issue where dotfiles weren't packaged - [see issue 17](https://github.com/dotupNET/grunt-aws-lambda/issues/17)
+* Fixed issue where task could be done before zip writing is finished - [pull request by qen](https://github.com/dotupNET/grunt-aws-lambda/pull/16)
+* Monkey patched node-archiver to force permissions to be 777 for all files in package - [see issue 6](https://github.com/dotupNET/grunt-aws-lambda/issues/6)
 
 ### 0.6.0
 * Fixing a minor issue caused by some code that shouldn't have been commented out.
@@ -613,34 +613,34 @@ Adding more warnings for various failure cases
 * Removing some unneeded files from the NPM package.
 
 ### 0.8.0
-* Adding `include_files` option to package - [pull request by dhleong](https://github.com/Tim-B/grunt-aws-lambda/pull/19)
+* Adding `include_files` option to package - [pull request by dhleong](https://github.com/dotupNET/grunt-aws-lambda/pull/19)
 
 ### 0.9.0
-* Parsing region automatically from ARN - [pull request by jvwing](https://github.com/Tim-B/grunt-aws-lambda/pull/25)
+* Parsing region automatically from ARN - [pull request by jvwing](https://github.com/dotupNET/grunt-aws-lambda/pull/25)
 
 ### 0.10.0
-* Making NPM a regular dependency to resolve [#20](https://github.com/Tim-B/grunt-aws-lambda/issues/20) - [pull request by timdp](https://github.com/Tim-B/grunt-aws-lambda/pull/27)
+* Making NPM a regular dependency to resolve [#20](https://github.com/dotupNET/grunt-aws-lambda/issues/20) - [pull request by timdp](https://github.com/dotupNET/grunt-aws-lambda/pull/27)
 
 ### 0.11.0
-* Including AWS API error message in deployment failure - [pull request by CaseyBurns](https://github.com/Tim-B/grunt-aws-lambda/pull/40)
-* Providing a method to pass AWS credentials in either the Gruntfile or credentials file - [pull request by robbiet480](https://github.com/Tim-B/grunt-aws-lambda/pull/34)
-* Adding support for AWS temporary credentials - [pull request by olih](https://github.com/Tim-B/grunt-aws-lambda/pull/46)
+* Including AWS API error message in deployment failure - [pull request by CaseyBurns](https://github.com/dotupNET/grunt-aws-lambda/pull/40)
+* Providing a method to pass AWS credentials in either the Gruntfile or credentials file - [pull request by robbiet480](https://github.com/dotupNET/grunt-aws-lambda/pull/34)
+* Adding support for AWS temporary credentials - [pull request by olih](https://github.com/dotupNET/grunt-aws-lambda/pull/46)
 
 ### 0.12.0
 
-* Added package_folder option to lambda_invoke task - [pull request by dcaravana](https://github.com/Tim-B/grunt-aws-lambda/pull/62)
-* Adding optional files to contain JSON objects for clientContext and identity to be passed into the lambda_invoke command - [pull request by Skorch](https://github.com/Tim-B/grunt-aws-lambda/pull/51)
-* Add handler option to lambda_deploy task - [pull request by Rawbz](https://github.com/Tim-B/grunt-aws-lambda/pull/52)
-* Fix lambda_deploy config example - [pull request by pracucci](https://github.com/Tim-B/grunt-aws-lambda/pull/56)
-* Context object methods cleanup - [pull request by ubergoob](https://github.com/Tim-B/grunt-aws-lambda/pull/58), also fixes [issue 54](https://github.com/Tim-B/grunt-aws-lambda/issues/54)
-* When deploy_arn is not defined in the Gruntfile the value is undefined - [pull request by varunvairavan](https://github.com/Tim-B/grunt-aws-lambda/pull/60)
+* Added package_folder option to lambda_invoke task - [pull request by dcaravana](https://github.com/dotupNET/grunt-aws-lambda/pull/62)
+* Adding optional files to contain JSON objects for clientContext and identity to be passed into the lambda_invoke command - [pull request by Skorch](https://github.com/dotupNET/grunt-aws-lambda/pull/51)
+* Add handler option to lambda_deploy task - [pull request by Rawbz](https://github.com/dotupNET/grunt-aws-lambda/pull/52)
+* Fix lambda_deploy config example - [pull request by pracucci](https://github.com/dotupNET/grunt-aws-lambda/pull/56)
+* Context object methods cleanup - [pull request by ubergoob](https://github.com/dotupNET/grunt-aws-lambda/pull/58), also fixes [issue 54](https://github.com/dotupNET/grunt-aws-lambda/issues/54)
+* When deploy_arn is not defined in the Gruntfile the value is undefined - [pull request by varunvairavan](https://github.com/dotupNET/grunt-aws-lambda/pull/60)
 * Extensive refactoring to improve testability and a new unit test suite
 * Bumped AWS SDK version to 2.2.32
 * Added support for versioning and aliases
-* Added support for excluding the package version from the package artifact name - based on [pull request by leecrossley](https://github.com/Tim-B/grunt-aws-lambda/pull/59)
+* Added support for excluding the package version from the package artifact name - based on [pull request by leecrossley](https://github.com/dotupNET/grunt-aws-lambda/pull/59)
 
 ### 0.13.0
 
-* Added support for Node 4.3 runtime callback function - [pull request by bobhigs](https://github.com/Tim-B/grunt-aws-lambda/pull/76)
-* Added VPC support - [pull request by beeva-arturomartinez](https://github.com/Tim-B/grunt-aws-lambda/pull/71)
-* Added local proxy support - [pull request by alekstr](https://github.com/Tim-B/grunt-aws-lambda/pull/66)
+* Added support for Node 4.3 runtime callback function - [pull request by bobhigs](https://github.com/dotupNET/grunt-aws-lambda/pull/76)
+* Added VPC support - [pull request by beeva-arturomartinez](https://github.com/dotupNET/grunt-aws-lambda/pull/71)
+* Added local proxy support - [pull request by alekstr](https://github.com/dotupNET/grunt-aws-lambda/pull/66)

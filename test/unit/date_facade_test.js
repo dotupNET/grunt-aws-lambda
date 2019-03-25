@@ -2,7 +2,7 @@
 
 /*
  * grunt-aws-lambda
- * https://github.com/Tim-B/grunt-aws-lambda
+ * https://github.com/dotupNET/grunt-aws-lambda
  *
  * Copyright (c) 2014 Tim-B
  * Licensed under the MIT license.
